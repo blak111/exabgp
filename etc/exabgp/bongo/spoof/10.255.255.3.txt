@@ -1,0 +1,27 @@
+neighbor 10.255.255.2 {
+	description "Network 2";
+	router-id 10.255.255.3;
+	local-address 10.255.255.3;
+	local-as 65503;
+	peer-as 65502;
+	hold-time 180;
+        add-path send/receive;
+
+	static {
+		route 1.1.3.0/24 next-hop 10.255.255.3;
+	}
+}
+neighbor 192.168.1.114 {
+	description "Network 1";
+	router-id 10.255.255.3;
+	local-address 10.255.255.3;
+	local-as 65503;
+	peer-as 65501;
+	hold-time 180;
+        add-path send/receive;
+
+	static {
+		route 1.1.3.0/24 next-hop 10.255.255.3;
+	}
+}
+
