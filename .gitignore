@@ -1,7 +1,0 @@
-*.pyc
-*.pyo
-/build/
-/dist/
-/sdist/
-
-.DS_Store
